@@ -11,8 +11,9 @@ namespace Mariella {
         private Font myFont;
 
         public SaveDataStruct loadedSave { get; set; }
+        public ContentEditorMain parent { get; set; }
 
-        public ContentEditorData() {
+        public ContentEditorData(ContentEditorMain parent) {
             InitializeComponent();
             byte[] fontData = Properties.Resources.LeagueGothic_Regular;
             int fontlength = fontData.Length;
@@ -24,13 +25,14 @@ namespace Mariella {
             System.Runtime.InteropServices.Marshal.FreeCoTaskMem(fontPtr);
 
             myFont = new Font(fonts.Families[0], 16.0F);
-            foreach(Control control in this.splitContainer1.Panel2.Controls) {
+            foreach (Control control in this.splitContainer1.Panel2.Controls) {
                 control.Font = myFont;
             }
             foreach (Control control in this.splitContainer1.Panel1.Controls) {
                 control.Font = myFont;
             }
             this.Anchor = (AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Bottom | AnchorStyles.Right);
+            this.parent = parent;
         }
 
         public void LoadContent(DataContainer saveData) {
@@ -110,6 +112,10 @@ namespace Mariella {
 
         private void checkState_CheckedChanged(object sender, EventArgs e) {
             checkState.Text = (checkState.Checked) ? "true" : "false";
+        }
+
+        private void RTName_TextChanged(object sender, EventArgs e) {
+            this.parent.RecieveContentUpdate(ContentEditorMain.UpdateState.Name, RTName.Text);
         }
     }
 }

@@ -49,7 +49,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RTString.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.RTString.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.RTString.Font = new System.Drawing.Font("League Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RTString.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RTString.Location = new System.Drawing.Point(24, 151);
             this.RTString.Name = "RTString";
             this.RTString.Size = new System.Drawing.Size(608, 129);
@@ -88,11 +88,11 @@
             // labelName
             // 
             this.labelName.AutoSize = true;
-            this.labelName.Font = new System.Drawing.Font("League Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.labelName.Location = new System.Drawing.Point(23, 55);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(89, 25);
+            this.labelName.Size = new System.Drawing.Size(142, 25);
             this.labelName.TabIndex = 20;
             this.labelName.Text = "Object Name:";
             // 
@@ -102,13 +102,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RTName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.RTName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.RTName.Font = new System.Drawing.Font("League Gothic", 15.7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RTName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RTName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.RTName.Location = new System.Drawing.Point(114, 52);
             this.RTName.Name = "RTName";
             this.RTName.Size = new System.Drawing.Size(518, 30);
             this.RTName.TabIndex = 19;
             this.RTName.Text = "";
+            this.RTName.TextChanged += new System.EventHandler(this.RTName_TextChanged);
             // 
             // comboType
             // 
@@ -117,7 +118,7 @@
             this.comboType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.comboType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboType.Font = new System.Drawing.Font("League Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.comboType.FormattingEnabled = true;
             this.comboType.Items.AddRange(new object[] {
@@ -134,44 +135,44 @@
             // labelType
             // 
             this.labelType.AutoSize = true;
-            this.labelType.Font = new System.Drawing.Font("League Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelType.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.labelType.Location = new System.Drawing.Point(32, 16);
             this.labelType.Name = "labelType";
-            this.labelType.Size = new System.Drawing.Size(79, 25);
+            this.labelType.Size = new System.Drawing.Size(127, 25);
             this.labelType.TabIndex = 17;
             this.labelType.Text = "Value Type:";
             // 
             // labelString
             // 
             this.labelString.AutoSize = true;
-            this.labelString.Font = new System.Drawing.Font("League Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelString.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelString.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.labelString.Location = new System.Drawing.Point(22, 123);
             this.labelString.Name = "labelString";
-            this.labelString.Size = new System.Drawing.Size(87, 25);
+            this.labelString.Size = new System.Drawing.Size(135, 25);
             this.labelString.TabIndex = 13;
             this.labelString.Text = "String Value:";
             // 
             // labelState
             // 
             this.labelState.AutoSize = true;
-            this.labelState.Font = new System.Drawing.Font("League Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelState.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.labelState.Location = new System.Drawing.Point(12, 89);
             this.labelState.Name = "labelState";
-            this.labelState.Size = new System.Drawing.Size(98, 25);
+            this.labelState.Size = new System.Drawing.Size(153, 25);
             this.labelState.TabIndex = 11;
             this.labelState.Text = "Boolean State:";
             // 
             // labelInteger
             // 
             this.labelInteger.AutoSize = true;
-            this.labelInteger.Font = new System.Drawing.Font("League Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelInteger.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInteger.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.labelInteger.Location = new System.Drawing.Point(18, 16);
             this.labelInteger.Name = "labelInteger";
-            this.labelInteger.Size = new System.Drawing.Size(94, 25);
+            this.labelInteger.Size = new System.Drawing.Size(145, 25);
             this.labelInteger.TabIndex = 9;
             this.labelInteger.Text = "Integer Value:";
             // 
@@ -181,7 +182,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RTInteger.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.RTInteger.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.RTInteger.Font = new System.Drawing.Font("League Gothic", 15.7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RTInteger.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RTInteger.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.RTInteger.Location = new System.Drawing.Point(114, 13);
             this.RTInteger.Name = "RTInteger";
@@ -192,11 +193,11 @@
             // labelFloat
             // 
             this.labelFloat.AutoSize = true;
-            this.labelFloat.Font = new System.Drawing.Font("League Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelFloat.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFloat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.labelFloat.Location = new System.Drawing.Point(31, 52);
             this.labelFloat.Name = "labelFloat";
-            this.labelFloat.Size = new System.Drawing.Size(81, 25);
+            this.labelFloat.Size = new System.Drawing.Size(127, 25);
             this.labelFloat.TabIndex = 7;
             this.labelFloat.Text = "Float Value:";
             // 
@@ -206,7 +207,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RTFloat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.RTFloat.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.RTFloat.Font = new System.Drawing.Font("League Gothic", 15.7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RTFloat.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RTFloat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.RTFloat.Location = new System.Drawing.Point(114, 49);
             this.RTFloat.Name = "RTFloat";
@@ -217,11 +218,11 @@
             // checkState
             // 
             this.checkState.AutoSize = true;
-            this.checkState.Font = new System.Drawing.Font("League Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkState.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.checkState.Location = new System.Drawing.Point(118, 89);
             this.checkState.Name = "checkState";
-            this.checkState.Size = new System.Drawing.Size(60, 29);
+            this.checkState.Size = new System.Drawing.Size(77, 29);
             this.checkState.TabIndex = 5;
             this.checkState.Text = "false";
             this.checkState.UseVisualStyleBackColor = true;

@@ -11,8 +11,9 @@ namespace Mariella {
         Font myFont;
 
         public KVStruct loadedSave { get; set; }
+        public ContentEditorMain parent { get; set; }
 
-        public ContentEditorKVData() {
+        public ContentEditorKVData(ContentEditorMain parent) {
             InitializeComponent();
             byte[] fontData = Properties.Resources.LeagueGothic_Regular;
             int fontlength = fontData.Length;
@@ -26,6 +27,7 @@ namespace Mariella {
             myFont = new Font(fonts.Families[0], 16.0F);
             labelName.Font = myFont;
             labelValue.Font = myFont;
+            this.parent = parent;
         }
 
         public void LoadContent(DataContainer saveData) {
@@ -52,6 +54,10 @@ namespace Mariella {
             this.loadedSave = null;
             this.RTName.Clear();
             this.RTValue.Clear();
+        }
+
+        private void RTName_TextChanged(object sender, EventArgs e) {
+            this.parent.RecieveContentUpdate(ContentEditorMain.UpdateState.Name, RTName.Text);
         }
     }
 }

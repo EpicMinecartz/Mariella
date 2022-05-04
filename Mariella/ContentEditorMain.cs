@@ -9,16 +9,19 @@ namespace Mariella {
         public TSPSave loadedSave = null;
         public ContentSection section = ContentSection.Save;
         public ContentType type = ContentType.Data;
+        private bool ignoreListSelection = false;
 
         public ContentEditorMain() {
             InitializeComponent();
         }
 
-        public ContentEditorMain(ContentType contentType) {
+        public ContentEditorMain(ContentType contentType, ContentSection contentSection = ContentSection.Save) {
             InitializeComponent();
             this.DoubleBuffered = true;
-            this.Anchor = (AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Bottom | AnchorStyles.Right);
+            this.Dock = DockStyle.Fill;
             this.editorControl = InitEditor(contentType);
+            this.type = contentType;
+            this.section = contentSection;
             ((Control)this.editorControl).Dock = DockStyle.Fill;
             ((Control)this.editorControl).Visible = false;
             this.splitContainer1.Panel2.Controls.Add((Control)this.editorControl);
@@ -36,7 +39,7 @@ namespace Mariella {
             KV,
             Data
         }
-        
+
         public enum ContentSection {
             Save,
             KVInteger,
@@ -47,11 +50,11 @@ namespace Mariella {
 
         public IContentEditor InitEditor(ContentType contentType) {
             this.type = contentType;
-            switch(contentType) {
+            switch (contentType) {
                 case ContentType.KV:
-                    return new ContentEditorKVData();
+                    return new ContentEditorKVData(this);
                 case ContentType.Data:
-                    return new ContentEditorData();
+                    return new ContentEditorData(this);
                 default:
                     return null;
             }
@@ -110,7 +113,7 @@ namespace Mariella {
 
         private void RefreshContentList() {
             int index = 0;
-            if(this.listBoxContent.Items.Count > 0) {
+            if (this.listBoxContent.Items.Count > 0) {
                 index = this.listBoxContent.SelectedIndex;
                 this.listBoxContent.Items.Clear();
             }
@@ -126,12 +129,17 @@ namespace Mariella {
                 }
             }
             if (this.listBoxContent.Items.Count > 0) {
-                this.listBoxContent.SelectedIndex = Math.Min(this.listBoxContent.Items.Count -1,index);
+                this.listBoxContent.SelectedIndex = Math.Min(this.listBoxContent.Items.Count - 1, index);
             }
         }
 
         private void EditorReloadContent(int index) {
             this.LoadDataContainer(ConstructDCForContent(index));
+        }
+
+        public void LoadSave(TSPSave save) {
+            this.loadedSave = save;
+            ProcessContentList();
         }
 
         public void LoadSave(TSPSave save, ContentSection Section) {
@@ -144,11 +152,10 @@ namespace Mariella {
             this.loadedSave = null;
             this.editorControl.DropContent();
             this.listBoxContent.Items.Clear();
-
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e) {
-            EditorReloadContent(listBoxContent.SelectedIndex);
+            if(!ignoreListSelection) EditorReloadContent(listBoxContent.SelectedIndex);
         }
 
         private void UpdateUIState() {
@@ -180,6 +187,24 @@ namespace Mariella {
             }
             RefreshContentList();
             UpdateUIState();
+        }
+
+        public void RecieveContentUpdate(UpdateState state, string value) {
+            if (this.listBoxContent.SelectedIndex != -1) {
+                switch (state) {
+                    case UpdateState.Name:
+                        ignoreListSelection = true;
+                        this.listBoxContent.Items[this.listBoxContent.SelectedIndex] = value;
+                        ignoreListSelection = false;
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
+
+        public enum UpdateState {
+            Name
         }
     }
 }

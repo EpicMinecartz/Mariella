@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mariella {
     public interface IContentEditor {
+        ContentEditorMain parent { get; set; }
         void LoadContent(DataContainer data);
         void SaveContent(DataContainer data);
         void DropContent();

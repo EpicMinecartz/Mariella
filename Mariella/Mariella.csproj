@@ -76,6 +76,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="ContentEditorData.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -105,9 +111,13 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SaveProcessor.cs" />
+    <Compile Include="TabController.cs" />
     <Compile Include="TSPTabControl.cs">
       <SubType>Component</SubType>
     </Compile>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ContentEditorData.resx">
       <DependentUpon>ContentEditorData.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +179,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Mariella.ico" />
+    <None Include="Resources\MariellaHeader.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.6.0.0\build\Fody.targets" Condition="Exists('..\packages\Fody.6.0.0\build\Fody.targets')" />

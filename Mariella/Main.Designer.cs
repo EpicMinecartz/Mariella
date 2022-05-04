@@ -35,21 +35,18 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openDefaultSaveFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reloadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.fileStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripLabelOpenSave = new System.Windows.Forms.ToolStripStatusLabel();
             this.tspTabControl1 = new Mariella.TSPTabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
-            this.tspTabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -165,16 +162,30 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openDefaultSaveFolderToolStripMenuItem,
+            this.toolStripSeparator2,
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "&Help";
             // 
+            // openDefaultSaveFolderToolStripMenuItem
+            // 
+            this.openDefaultSaveFolderToolStripMenuItem.Name = "openDefaultSaveFolderToolStripMenuItem";
+            this.openDefaultSaveFolderToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
+            this.openDefaultSaveFolderToolStripMenuItem.Text = "Open default save folder...";
+            this.openDefaultSaveFolderToolStripMenuItem.Click += new System.EventHandler(this.openDefaultSaveFolderToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(209, 6);
+            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -210,7 +221,8 @@
             this.statusStrip1.AllowDrop = true;
             this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileStatusLabel});
+            this.fileStatusLabel,
+            this.toolStripLabelOpenSave});
             this.statusStrip1.Location = new System.Drawing.Point(0, 555);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1057, 22);
@@ -224,15 +236,20 @@
             this.fileStatusLabel.Name = "fileStatusLabel";
             this.fileStatusLabel.Size = new System.Drawing.Size(0, 17);
             // 
+            // toolStripLabelOpenSave
+            // 
+            this.toolStripLabelOpenSave.IsLink = true;
+            this.toolStripLabelOpenSave.LinkColor = System.Drawing.Color.Cyan;
+            this.toolStripLabelOpenSave.Name = "toolStripLabelOpenSave";
+            this.toolStripLabelOpenSave.Size = new System.Drawing.Size(116, 17);
+            this.toolStripLabelOpenSave.Text = "(Open save location)";
+            this.toolStripLabelOpenSave.Visible = false;
+            this.toolStripLabelOpenSave.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
+            // 
             // tspTabControl1
             // 
             this.tspTabControl1.AllowDrop = true;
-            this.tspTabControl1.ControlBox = false;
-            this.tspTabControl1.Controls.Add(this.tabPage1);
-            this.tspTabControl1.Controls.Add(this.tabPage2);
-            this.tspTabControl1.Controls.Add(this.tabPage3);
-            this.tspTabControl1.Controls.Add(this.tabPage4);
-            this.tspTabControl1.Controls.Add(this.tabPage5);
+            this.tspTabControl1.ControlBox = true;
             this.tspTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tspTabControl1.Location = new System.Drawing.Point(0, 24);
             this.tspTabControl1.Name = "tspTabControl1";
@@ -240,58 +257,9 @@
             this.tspTabControl1.Size = new System.Drawing.Size(1057, 531);
             this.tspTabControl1.TabIndex = 0;
             this.tspTabControl1.Visible = false;
+            this.tspTabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tspTabControl1_Selected);
             this.tspTabControl1.DragDrop += new System.Windows.Forms.DragEventHandler(this.Main_DragDrop);
             this.tspTabControl1.DragEnter += new System.Windows.Forms.DragEventHandler(this.Main_DragEnter);
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1049, 502);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Primary Data";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1049, 502);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Int Data";
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1049, 502);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Float Data";
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.tabPage4.Location = new System.Drawing.Point(4, 25);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1049, 502);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Bool Data";
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.tabPage5.Location = new System.Drawing.Point(4, 25);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1049, 502);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "String Data";
             // 
             // Main
             // 
@@ -316,7 +284,6 @@
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
-            this.tspTabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,15 +306,13 @@
         private System.Windows.Forms.ToolStripMenuItem debugToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private TSPTabControl tspTabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.ToolStripMenuItem xToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reloadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripStatusLabel fileStatusLabel;
+        private System.Windows.Forms.ToolStripMenuItem openDefaultSaveFolderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripLabelOpenSave;
     }
 }
 

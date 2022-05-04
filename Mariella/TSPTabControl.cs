@@ -172,7 +172,11 @@ namespace Mariella {
                         //this.TabPages.Remove(this.SelectedTab);
                     }
                 } else if (e.Button == MouseButtons.Middle) {
-                    TabRequestDestroy.Invoke(this, this.SelectedIndex);
+                    for (int i = 0;i < this.TabCount;++i) {
+                        if (this.GetTabRect(i).Contains(e.Location)) {
+                            TabRequestDestroy.Invoke(this, i);
+                        }
+                    }
                 }
 
             }
